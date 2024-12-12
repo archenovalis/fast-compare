@@ -22,7 +22,6 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(compareWithActiveFileDisposable);
 
-
   const compareWithTab = vscode.commands.registerCommand('fastcompare.compareWithTab', () => {
     if (!vscode.window.activeTextEditor) {
       vscode.window.showErrorMessage("Active tab is not a Text Editor!");
@@ -78,6 +77,8 @@ export function activate(context: vscode.ExtensionContext) {
       );      
     }
   });
+  
+  context.subscriptions.push(compareWithTab);
 }
 
 export function deactivate() { }
